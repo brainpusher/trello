@@ -18,6 +18,6 @@ Route::get('/', function () {
 //Route::get('/uploadfile','Uploadfilecontroller@index');
 //Route::post('/uploadfile', 'UploadfileController@upload');
 Route::get('/', 'LoginController@index');
-Route::post('/main/checklogin', 'LoginController@checklogin');
-Route::get('main/successlogin', 'LoginController@successlogin');
+Route::post('/checklogin', 'LoginController@checklogin');
+Route::get('/boards', 'LoginController@boards');
 Route::get('main/logout', 'LoginController@logout');

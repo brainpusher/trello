@@ -23,7 +23,7 @@ class LoginController extends Controller
         );
 
         if(Auth::attempt($user_data)) {
-            return redirect('main/successlogin');
+            return redirect('/boards');
         }
         else {
             return back()->with('error', 'Wrong Login Details');
@@ -31,15 +31,15 @@ class LoginController extends Controller
 
     }
 
-    function successlogin()
+    function boards()
     {
-        return view('successlogin');
+        return view('boards');
     }
 
     function logout()
     {
         Auth::logout();
-        return redirect('main');
+        return redirect('/');
     }
 }
 ?>

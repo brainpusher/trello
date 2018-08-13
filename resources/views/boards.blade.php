@@ -27,14 +27,12 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="btn btn-primary" href="{{ url('/main/logout') }}" role="button">Logout</a>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <a class="btn btn-primary" href="{{ url('/main/logout') }}" role="button">Logout</a>
     </nav>
 
     <br />
@@ -49,6 +47,31 @@
         <div class="item">Zenia Correa1</div>
         <div class="item">Zenia Correa</div>
     </div>
+
+    <div id="userBoards" class="items" v-for="userBoard in userBoards">
+            <div id="userBoard" class="item">
+                <h1> YOOOO!</h1>
+            </div>
+    </div>
+    <button @click="loadmore" class="bg-info">load more</button>
+    <script>
+        new Vue({
+            el: '#userBoards',
+
+            data: {
+                userBoards: [
+                ]
+            },
+
+            methods: {
+                loadMore: function() {
+                    // load next panel -> let panel = ..
+                    this.userBoards.push(userBoard);
+
+                }
+            }
+        })
+    </script>
 {{--<div class="container">
     <h3 align="center"> Please log in </h3><br />
 

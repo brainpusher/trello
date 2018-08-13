@@ -16,10 +16,10 @@
  <body>
   <br />
   <div class="container box">
-   <h3 align="center">Simple Login System in Laravel</h3><br />
+   <h3 align="center"> Please log in </h3><br />
 
 @if(isset(Auth::user()->email))
-    <script>window.location="/main/successlogin";</script>
+    <script>window.location="/boards";</script>
 @endif
 
 @if ($message = Session::get('error'))
@@ -39,7 +39,7 @@
     </div>
 @endif
 
-<form method="post" action="{{ url('/main/checklogin') }}">
+<form method="post" action="{{ url('/checklogin') }}">
     {{ csrf_field() }}
     <div class="form-group">
         <label>Enter Email</label>
@@ -50,7 +50,7 @@
         <input type="password" name="password" class="form-control" />
     </div>
     <div class="form-group">
-        <input type="submit" name="login" class="btn btn-primary" value="Login" />
+        <input type="submit" name="login" class="btn btn-primary" value="Let me in" />
     </div>
 </form>
 </div>
